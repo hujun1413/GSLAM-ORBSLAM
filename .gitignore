@@ -2,3 +2,5 @@
 *.user
 *temp*
 ThirdParty/internal/GSLAM
+*~
+.vscode/*
