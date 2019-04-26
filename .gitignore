@@ -4,3 +4,5 @@
 ThirdParty/internal/GSLAM
 *~
 .vscode/*
+evaluation.txt
+eva_traj.txt

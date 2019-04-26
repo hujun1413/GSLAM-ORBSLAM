@@ -144,11 +144,10 @@ void ORBSLAM::run()
 {
 
     boost::thread localMappingThread(&ORB_SLAM::LocalMapping::Run, LocalMapper.get());
-
     boost::thread loopClosingThread(&ORB_SLAM::LoopClosing::Run, LoopCloser.get());
 
     // running map cleanup thread
-//    boost::thread mapClearnThread(&ORB_SLAM::Map::Run, World);
+    //boost::thread mapClearnThread(&ORB_SLAM::Map::Run, World);
 
 }
 
