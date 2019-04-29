@@ -7,8 +7,8 @@ import io
 import traceback
 
 #过滤掉文件中无用的位姿
-pose_graph_path = '/home/cutcat/hujun_file/GSLAM-SVO/evaluations/eva_traj_tumrgbd_withloop.txt'
-pose_traj_path = "/home/cutcat/hujun_file/GSLAM-SVO/evaluations/eva_traj_tumrgbd_withloop_filter.txt"
+pose_graph_path = '/home/cutcat/hujun_file/GSLAM-ORBSLAM/evaluations/eva_traj_euroc.txt'
+pose_traj_path = "/home/cutcat/hujun_file/GSLAM-ORBSLAM/evaluations/eva_traj_euroc_filter.txt"
  
 class PoseExtractor():
  
@@ -21,9 +21,9 @@ class PoseExtractor():
         count = 0
         for line in poses_lines:
             #print line
-            line_strip = line.strip(' ') #去除首尾空格
+            line_strip = line.strip() #去除首尾空格和换行符
             list = line_strip.split(' ') #空格分割得到各数据
-            if list[1] == "0.000000" and list[2] == "0.000000" and list[3] == "0.000000" and list[7].rstrip() == "1":
+            if list[1] == "0.000000" and list[2] == "0.000000" and list[3] == "0.000000" and list[7] == "1":
             	continue
             os.write(traj_file,  line) #写入文件
             count += 1
